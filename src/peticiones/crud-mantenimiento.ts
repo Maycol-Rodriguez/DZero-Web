@@ -1,8 +1,10 @@
 import { AxiosResponse } from 'axios';
+import { Database, ref, set } from 'firebase/database';
 import { axiosInstance } from '../config/axios.config';
 import { Solicitud } from '../mappers/mapp_atencion';
 
 export const listarMantenimientos = async (): Promise<Solicitud[]> => {
+  //! GET
   try {
     const data: AxiosResponse<Solicitud> = await axiosInstance.get('actions.json');
     return Object.values(data.data);
@@ -12,11 +14,24 @@ export const listarMantenimientos = async (): Promise<Solicitud[]> => {
   }
 };
 
-export const insertarMantenimiento = async (data: Solicitud): Promise<void> => {
+export const insertarMantenimiento = async (
+  database: Database,
+  id: string,
+  datos: Solicitud
+) => {
   try {
-    await axiosInstance.post('actions.json', data);
+    await set(ref(database, `actions/${id}`), datos);
+    console.log('Solicitud registrada exitosamente');
   } catch (error) {
-    console.log('Error al insertar el reporte');
-    throw error;
+    console.error('Error al registrar la venta:', error);
+  }
+};
+
+export const actualizarMantenimiento = async (id: string, datos: Solicitud) => {
+  try {
+    await axiosInstance.put(`actions/${id}.json`, datos);
+    console.log('Venta editada exitosamente');
+  } catch (error) {
+    console.error('Error al editar la venta:', error);
   }
 };

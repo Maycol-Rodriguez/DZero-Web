@@ -1,4 +1,5 @@
 export interface Solicitud {
+  id: string;
   atencion: Atencion;
   finalizado: boolean;
   reporte: Reporte;

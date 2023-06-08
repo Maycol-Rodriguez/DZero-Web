@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { API_KEY, API_URL } from '../../variables';
+import { API_KEY, DATABASE_URL } from '../../variables';
 
 export const axiosInstance = axios.create({
-  baseURL: API_URL,
+  baseURL: DATABASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },

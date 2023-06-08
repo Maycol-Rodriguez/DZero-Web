@@ -1,11 +1,11 @@
+import { database } from '../config/services/firebase.config';
 import { Solicitud } from '../mappers/mapp_atencion';
 import { Reports } from '../mappers/mapp_reporte';
 import { insertarMantenimiento } from '../peticiones/crud-mantenimiento';
 import { listarReportes } from '../peticiones/listar-reportes';
+import { v4 } from 'uuid';
 
 export const mostrarReportes = async () => {
-  const data: Reports[] = await listarReportes();
-
   function abrirModal() {
     const modalContainer = document.getElementById('modal-container');
     modalContainer!.style.display = 'block';
@@ -17,6 +17,7 @@ export const mostrarReportes = async () => {
   }
 
   if (window.location.pathname === '/index.html') {
+    const data: Reports[] = await listarReportes();
     const insertarModal = document.querySelector<HTMLDivElement>('#insertar-modal');
     data.forEach(({ description, location, picture, user }) => {
       const contenedor2 = document.getElementById('parent2');
@@ -109,6 +110,7 @@ export const mostrarReportes = async () => {
             .getAttribute('picture')!;
 
           const enviarSolicitud: Solicitud = {
+            id: v4(),
             atencion: {
               fecha,
               hora,
@@ -128,7 +130,8 @@ export const mostrarReportes = async () => {
               },
             },
           };
-          insertarMantenimiento(enviarSolicitud);
+
+          insertarMantenimiento(database, enviarSolicitud.id, enviarSolicitud);
           cerrarModal();
         });
 
