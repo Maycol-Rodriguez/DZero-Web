@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "desarrollo de una aplicacición web/movil para el curso de taller de proyectos",
+  "description": "desarrollo de una aplicación web para el curso de taller de proyectos",
   "author": {
     "name": "Maycol Rodriguez",
     "email": "maycol.rodriguez.ma@gmail.com"
