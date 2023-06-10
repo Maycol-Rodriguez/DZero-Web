@@ -1,5 +1,6 @@
+import { Reporte } from "./mapp_reporte";
+
 export interface Solicitud {
-  id: string;
   atencion: Atencion;
   finalizado: boolean;
   reporte: Reporte;
@@ -14,16 +15,4 @@ export interface Atencion {
 export interface Colaborador {
   apellidos: string;
   nombre: string;
-}
-
-export interface Reporte {
-  description: string;
-  location: string;
-  picture: string;
-  user: User;
-}
-
-export interface User {
-  email: string;
-  name: string;
 }

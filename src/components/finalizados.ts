@@ -27,10 +27,9 @@ export const mostrarFinalizados = async () => {
               <p><b>Hora:</b> <br> ${hora}</p>
             </div>
             <p><b>Estado:</b> ${finalizado ? 'Finalizado' : 'Pendiente'}</p>
-            <button type='submit'>Finalizar Mantenimiento?</button>
-          </div>
+           </div>
         </div>
-      </div>;
+      </div>
       `;
 
       contenedor?.append(div);

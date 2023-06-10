@@ -1,25 +1,24 @@
 import { database } from '../config/services/firebase.config';
 import { Solicitud } from '../mappers/mapp_atencion';
-import { Reports } from '../mappers/mapp_reporte';
+import { Reporte } from '../mappers/mapp_reporte';
 import { insertarMantenimiento } from '../peticiones/crud-mantenimiento';
 import { listarReportes } from '../peticiones/listar-reportes';
-import { v4 } from 'uuid';
 
 export const mostrarReportes = async () => {
-  function abrirModal() {
-    const modalContainer = document.getElementById('modal-container');
-    modalContainer!.style.display = 'block';
-  }
-
-  function cerrarModal() {
-    const modalContainer = document.getElementById('modal-container');
-    modalContainer!.style.display = 'none';
-  }
-
   if (window.location.pathname === '/index.html') {
-    const data: Reports[] = await listarReportes();
+    function abrirModal() {
+      const modalContainer = document.getElementById('modal-container');
+      modalContainer!.style.display = 'block';
+    }
+
+    function cerrarModal() {
+      const modalContainer = document.getElementById('modal-container');
+      modalContainer!.style.display = 'none';
+    }
+
+    const data: Reporte[] = await listarReportes();
     const insertarModal = document.querySelector<HTMLDivElement>('#insertar-modal');
-    data.forEach(({ description, location, picture, user }) => {
+    data.forEach(({ description, location, picture, user, id }) => {
       const contenedor2 = document.getElementById('parent2');
 
       const contenedorAdd = document.createElement('div');
@@ -43,7 +42,7 @@ export const mostrarReportes = async () => {
               <form id="formulario-reporte">
 
                 <label for="nombre">Usuario:</label>
-                <input required disabled type="text" id="nombre" email='${user.email}' name="nombre" value="${user.name}">
+                <input required disabled type="text" id="nombre" id-reporte='${id}' email='${user.email}' name="nombre" value="${user.name}">
 
                 <label for="ubicacion">Ubicacion:</label>
                 <input required disabled type="text" id="ubicacion" picture='${picture}'  descripcion='${description}'  name="ubicacion" value="${location}" >
@@ -81,7 +80,6 @@ export const mostrarReportes = async () => {
         btnEnviar!.addEventListener('submit', (e) => {
           e.preventDefault();
           alert('Se ha enviado el formulario');
-
           const fecha: string = insertarModal!
             .querySelector<HTMLInputElement>('#fecha')!
             .value.split('-')
@@ -110,7 +108,6 @@ export const mostrarReportes = async () => {
             .getAttribute('picture')!;
 
           const enviarSolicitud: Solicitud = {
-            id: v4(),
             atencion: {
               fecha,
               hora,
@@ -124,6 +121,7 @@ export const mostrarReportes = async () => {
               description,
               location,
               picture,
+              id,
               user: {
                 name: userName,
                 email: userEmail,
@@ -131,7 +129,7 @@ export const mostrarReportes = async () => {
             },
           };
 
-          insertarMantenimiento(database, enviarSolicitud.id, enviarSolicitud);
+          insertarMantenimiento(database, enviarSolicitud.reporte.id, enviarSolicitud);
           cerrarModal();
         });
 
