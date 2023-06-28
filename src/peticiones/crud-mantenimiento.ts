@@ -30,7 +30,7 @@ export const insertarMantenimiento = async (
 export const actualizarMantenimiento = async (id: string, datos: Solicitud) => {
   try {
     await axiosInstance.put(`actions/${id}.json`, datos);
-    console.log('Venta editada exitosamente');
+    console.log('Reporte editada exitosamente');
   } catch (error) {
     console.error('Error al editar la venta:', error);
   }

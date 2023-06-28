@@ -3,9 +3,7 @@ import { listarMantenimientos } from '../peticiones/crud-mantenimiento';
 export const mostrarFinalizados = async () => {
   if (window.location.pathname === '/finalizado.html') {
     const data = await listarMantenimientos();
-    console.log(data);
     const datafiltrada = data.filter((item) => item.finalizado !== false);
-    console.log(datafiltrada);
     datafiltrada.forEach(({ atencion, finalizado, reporte }) => {
       const { colaborador, fecha, hora } = atencion;
       const { location, picture, user } = reporte;

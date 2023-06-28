@@ -9,4 +9,5 @@ export interface Reporte {
 export interface User {
   email: string;
   name: string;
+  id: string;
 }

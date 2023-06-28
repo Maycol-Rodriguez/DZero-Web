@@ -123,6 +123,7 @@ export const mostrarReportes = async () => {
               picture,
               id,
               user: {
+                id,
                 name: userName,
                 email: userEmail,
               },

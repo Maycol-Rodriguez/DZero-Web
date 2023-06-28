@@ -7,14 +7,14 @@ import { Solicitud } from '../mappers/mapp_atencion';
 export const mostrarMantenimientos = async () => {
   if (window.location.pathname === '/mantenimiento.html') {
     const data: Solicitud[] = await listarMantenimientos();
+
     const datafiltrada = data.filter((item) => item.finalizado !== true);
 
-    datafiltrada.forEach(({ atencion, finalizado, reporte, id }) => {
+    datafiltrada.forEach(({ atencion, finalizado, reporte }) => {
       const dataFinal: Solicitud = {
         atencion,
         finalizado,
         reporte,
-        id,
       };
       const { colaborador, fecha, hora } = atencion;
       const { location, picture, user } = reporte;
@@ -25,9 +25,9 @@ export const mostrarMantenimientos = async () => {
 
       cardMantenimiento.innerHTML = `
         <div class='card-mantenimiento'>
-        <div class='card-info-container' id-element='${id}'>
+        <div class='card-info-container' id-element='${reporte.id}'>
           <img class="imagen-mantenimiento" src="${picture}" alt='' />
-          <div class='card-mantenimiento-info' >
+          <div class='card-mantenimiento-info'  >
             <p><b>Usuario</b>: ${user.name}</p>
             <p><b>Ubicación</b>: <br> <span>${location}</span></p>
             <p><b>Encargado</b>: ${colaborador.apellidos}, ${colaborador.nombre}</p>
