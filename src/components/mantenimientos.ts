@@ -35,7 +35,7 @@ export const mostrarMantenimientos = async () => {
               <p><b>Fecha:</b> <br> ${fecha}</p>
               <p><b>Hora:</b> <br> ${hora}</p>
             </div>
-            <p><b>Estado:</b> ${finalizado ? 'Finalizado' : 'Pendiente'}</p>
+            <p><b>Estado:</b> ${finalizado ? 'Finalizado' : 'En Proceso'}</p>
             <button id="btnFinalizar" type='submit'>Finalizar Mantenimiento?</button>
           </div>
         </div>
@@ -53,9 +53,7 @@ export const mostrarMantenimientos = async () => {
           finalizado: true,
         };
 
-        const confirmacion = confirm(
-          '¿Está seguro de empezar a programar el mantenimiento?'
-        );
+        const confirmacion = confirm('¿El proceso fue concluido?');
 
         if (confirmacion) {
           actualizarMantenimiento(idSeleccionado!, actualizarSolicitud);

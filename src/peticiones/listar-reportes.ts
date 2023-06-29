@@ -5,9 +5,8 @@ import { Reporte } from '../mappers/mapp_reporte';
 export const listarReportes = async (): Promise<Reporte[]> => {
   try {
     const data: AxiosResponse<Reporte> = await axiosInstance.get('reports.json');
-    return Object.values(data.data);
+    return Object.values(data.data).reverse();
   } catch (error) {
-    console.log('Error al obtener los reportes');
-    throw error;
+    throw `Error al obtener los reportes ${error}`;
   }
 };
