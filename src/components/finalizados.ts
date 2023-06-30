@@ -4,6 +4,15 @@ export const mostrarFinalizados = async () => {
   if (window.location.pathname === '/finalizado.html') {
     const data = await listarMantenimientos();
     const datafiltrada = data.filter((item) => item.finalizado !== false);
+
+    datafiltrada.sort((a, b) => {
+      const fechaA = a.atencion.fecha.split('/');
+      const fechaB = b.atencion.fecha.split('/');
+      const fechaAOrdenada = new Date(`${fechaA[2]}-${fechaA[1]}-${fechaA[0]}`).getTime();
+      const fechaBOrdenada = new Date(`${fechaB[2]}-${fechaB[1]}-${fechaB[0]}`).getTime();
+      return fechaAOrdenada - fechaBOrdenada;
+    });
+
     datafiltrada.forEach(({ atencion, finalizado, reporte }) => {
       const { colaborador, fecha, hora } = atencion;
       const { location, picture, user } = reporte;

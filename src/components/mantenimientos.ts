@@ -10,6 +10,14 @@ export const mostrarMantenimientos = async () => {
 
     const datafiltrada = data.filter((item) => item.finalizado !== true);
 
+    datafiltrada.sort((a, b) => {
+      const fechaA = a.atencion.fecha.split('/');
+      const fechaB = b.atencion.fecha.split('/');
+      const fechaAOrdenada = new Date(`${fechaA[2]}-${fechaA[1]}-${fechaA[0]}`).getTime();
+      const fechaBOrdenada = new Date(`${fechaB[2]}-${fechaB[1]}-${fechaB[0]}`).getTime();
+      return fechaAOrdenada - fechaBOrdenada;
+    });
+
     datafiltrada.forEach(({ atencion, finalizado, reporte }) => {
       const dataFinal: Solicitud = {
         atencion,
