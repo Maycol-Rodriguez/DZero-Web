@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { API_KEY, DATABASE_URL } from '../../variables';
+import { VITE_APIKEY, VITE_DATABASEURL } from '.';
 
-export const axiosInstance = axios.create({
-  baseURL: DATABASE_URL,
+export const axio = axios.create({
+  baseURL: VITE_DATABASEURL,
   headers: {
     'Content-Type': 'application/json',
   },
   params: {
-    api_key: API_KEY,
+    api_key: VITE_APIKEY,
   },
 });

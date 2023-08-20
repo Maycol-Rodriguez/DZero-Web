@@ -1,8 +1,4 @@
-.firebase
-.firebaserc
-firebase.json
-database.rules.json
-variables.ts
+.env
 # Logs
 logs
 *.log
