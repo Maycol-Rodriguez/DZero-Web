@@ -1,12 +1,12 @@
-<div style="display: flex; justify-content: center;">
+<p align="center">
   <img src="./src/assets/logo-dzero-blue.svg" alt="Logo de DZero-Web" width="150"/>
-</div>
+</p>
 
-<div style="display: flex; justify-content: center; align-items: center;">
-  <h1>DZero-Web</h1>
-</div>
+<h1 align="center">
+  DZero-Web
+</h1>
 
-DZero-Web es una aplicación web diseñada para gestionar los reportes de RCD (Residuos de Construcción y Demolición) generados por los usuarios. Permitiendo asignar fechas de atención, encargados y horas específicas para cada reporte.
+Es una aplicación web diseñada para gestionar los reportes de RCD (Residuos de Construcción y Demolición) generados por los usuarios. Permitiendo asignar fechas de atención, encargados y horas específicas para cada reporte.
 
 ## Funcionalidades Clave
 
@@ -16,36 +16,26 @@ DZero-Web es una aplicación web diseñada para gestionar los reportes de RCD (R
 
 ## Tecnologías Utilizadas
 
-<div style="display: flex; justify-content: center;">
-  <div style="text-align: center; margin: 0 20px;">
+<p align="center"> 
+  <a href="https://reactjs.org/" target="_blank" rel="noreferrer" style="margin-right: 20px;">  
     <img src="https://cdn.svgporn.com/logos/react.svg" alt="Icono de React" width="50" height="50" />
-    <p style="font-size: 12px; margin: 0;">React</p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
+  </a>
+  <a href="https://www.typescriptlang.org/es/" target="_blank" rel="noreferrer" style="margin-right: 20px;">
     <img src="https://cdn.svgporn.com/logos/typescript-icon.svg" alt="Icono de TypeScript" width="50" height="50" />
-    <p style="font-size: 12px; margin: 0;">TypeScript</p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
+  </a>
+  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer" style="margin-right: 20px;"> 
     <img src="https://cdn.svgporn.com/logos/tailwindcss-icon.svg" alt="Icono de Tailwind CSS" width="50" height="50" />
-    <p style="font-size: 12px; margin: 0;">Tailwind CSS</p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
+  </a>
+  <a href="https://firebase.google.com/" target="_blank" rel="noreferrer" style="margin-right: 20px;"> 
     <img src="https://cdn.svgporn.com/logos/firebase.svg" alt="Icono de Firebase" width="50" height="50" />
-    <p style="font-size: 12px; margin: 0;">Firebase</p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
+  </a>
+  <a href="https://reactrouter.com/en/main" target="_blank" rel="noreferrer" style="margin-right: 20px;"> 
     <img src="https://cdn.svgporn.com/logos/react-router.svg" alt="Icono de React Router DOM" width="50" height="50" />
-    <p style="font-size: 12px; margin: 0;">React Router DOM</p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
-    <img src="https://cdn.svgporn.com/logos/axios.svg" alt="Icono de Axios" width="50" height="50" />
-    <p style="font-size: 12px; margin: 0;">Axios</p>
-  </div>
-  <div style="text-align: center; margin: 0 20px;">
+  </a> 
+  <a href="https://eslint.org/" target="_blank" rel="noreferrer" style="margin-right: 20px;"> 
     <img src="https://cdn.svgporn.com/logos/eslint.svg" alt="Icono de ESLint" width="50" height="50" />
-    <p style="font-size: 12px; margin: 0;">ESLint</p>
-  </div>
-</div>
+  </a> 
+</p>
 
 ## Instalación
 
