@@ -1,8 +1,9 @@
 {
   "name": "dzero-web",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
+  "author": "Maycol Rodriguez Mallqui",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
