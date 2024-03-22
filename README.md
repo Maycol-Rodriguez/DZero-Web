@@ -5,14 +5,18 @@
 <h1 align="center">
   DZero-Web
 </h1>
+<h2 align="center">Plataforma Web para la Gestión de Residuos Sólidos de Construcción y Demolición</h2>
 
-Es una aplicación web diseñada para gestionar los reportes de RCD (Residuos de Construcción y Demolición) generados por los usuarios. Permitiendo asignar fechas de atención, encargados y horas específicas para cada reporte.
+<p>DZero es una plataforma web desarrollada en React que permite a empresas y/o entidades gestionar los residuos sólidos de construcción y demolición (RCD) en Lima Metropolitana, generados por los usuarios. La plataforma identifica zonas con alta probabilidad de generación de RCD. Permitiendo asignar fechas de atención, encargados para la atencion de insidencias y horas específicas para el tratamiento de cada reporte dado.</p>
+
 
 ## Funcionalidades Clave
-
 - Gestión de reportes de RCD con detalles específicos.
-- Asignación de fechas, encargados y horas para la atención de reportes.
+- Asignación de fechas para el tratamiendo de los RCD.
+- Asignación de encargados para la recolección o tratamiento de los RCD.
+- Asignación de horas para la atención de reportes.
 - Visualización de reportes en proceso y finalizados.
+- Identificación de zonas con alta probabilidad de generación de RCD.
 
 ## Tecnologías Utilizadas
 
